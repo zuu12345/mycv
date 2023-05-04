@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .log{
+		   
+           margin-left: 69%;
+   }
+   .contact{
+        height: 300px;
+   }
+    </style>
+    <script>
+        window.onload = function(){
+            if(localStorage){
+            document.getElementById('contactform').addEventListener('submit',function(){
+                var name=document.getElementById('name').value;
+                localStorage.setItem('name',name);
+                var address=document.getElementById('address').value;
+                localStorage.setItem('address',address);
+                var email=document.getElementById('email').value;
+                localStorage.setItem('email',email);
+                var comment=document.getElementById('comment').value;
+                localStorage.setItem('comment',comment);
+            });
+        }
+            var name=localStorage.getItem('name');
+            var address=localStorage.getItem('address');
+            var email=localStorage.getItem('email');
+            var comment=localStorage.getItem('comment');
+            if(name!="undefined" && name!="null" && address!="undefine" && address!="null"){
+                
+                document.getElementById('message').innerHTML='Name Is: '+ name +' with Address of '+ address + ' And Email ' + email +' And Your Comment is '+ comment;
+            }
+            else{
+                document.getElementById('message').innerHTML='User Not Available';
+            }
+        }
+        
+     
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="logo"><img src="img/smz.png" class="logo1" ></div>
+            <div class="list">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#loginForm">Login</a></li>
+                </ul>
+            </div>
+            
+            <div class="log"><img src="img/suza.jpg" class="logo2"></div>
+        </div>
+        <div class="infor1">
+
+        </div>
+    </div>
+    <div class="contact">
+        Contact Us on 
+        <p>Pnone Number 0777654321 OR</p>
+        <p>07654323444 and 0776543232</p>
+         Contact Us on 
+        <p>Pnone Number 0777654321 OR</p>
+        <p>07654323444 and 0776543232</p>
+        <p>Email: bintabdallah33@gmail.com</p>
+    </div>
+    <div class="map">
+        
+        <h3>Follow The Following Direction</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15868.919813156008!2d39.21605448551281!3d-6.099701715826611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185cd3eee03c61b7%3A0x146999696e5afdfe!2sBububu!5e0!3m2!1ssw!2stz!4v1683219339858!5m2!1ssw!2stz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+        <div class="loginForm" id="loginForm" style="background-image: url('img/bg4.jpg'); background-size: cover; background-repeat: no-repeat;">
+            <h3 style="text-align: center;">Login Form</h3>
+            <hr>
+           <form id="contactform">
+                <label for="">Name:</label>
+                <input type="text" name="name" id="name"><br><br>
+                <label for="">Address: </label>
+                <input type="text" name="address" id="address"><br><br>
+                <label for="">Email: </label>
+                <input type="email" name="email" id="email"><br><br>
+                <label for="">Comment: </label>
+                <textarea name="comment" id="comment" cols="30" rows="10"></textarea><br><br>
+                <input type="submit" value="Login">
+           </form>
+        </div>
+    
+
+    <div id="message"></div>
+    
+</body>
+</html>
